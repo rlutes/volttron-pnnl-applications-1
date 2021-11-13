@@ -106,6 +106,7 @@ class Model(object):
             _log.debug("Prediction data not available for correction!")
             return
         if self.cleared_quantity is None:
+            self.model.prediction_data = []
             _log.debug("Cleared quantity data is not available for correction!")
             return
         try:

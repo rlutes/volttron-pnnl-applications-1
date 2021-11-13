@@ -53,6 +53,8 @@ SAF = "saf"
 OAT = "oat"
 # AHU/RTU return-air temperature
 RAT = "rat"
+# AHU/RTU outdoor-air damper position
+OAD = "oad"
 # RTU Mechanical cooling
 MC = "mclg"
 # RTU Mechanical cooling
