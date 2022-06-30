@@ -85,7 +85,7 @@ utils.setup_logging()
 _log = logging.getLogger(__name__)
 
 
-class Transactive(Model):
+class Transactive(Model, TransactiveNode):
     def __init__(self, config_path, **kwargs):
         super(Transactive, self).__init__(**kwargs)
         self.default_config = {}
@@ -95,6 +95,7 @@ class Transactive(Model):
                                   pattern="config")
         model_config = {}
         Model.__init__(self, model_config, **kwargs)
+        TransactiveNode.__init__(self)
 
     def configure_main(self, config_name, action, contents):
         config = self.default_config.copy()
