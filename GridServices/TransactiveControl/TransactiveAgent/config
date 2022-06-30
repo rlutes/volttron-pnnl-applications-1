@@ -2,7 +2,7 @@
 
    "models": [
         {
-            "model_type": "themostat",
+            "model_type": "thermostat.themostat",
             "topic": "devices/campus/building/thermostat",
             "demand_curve_points": 10,
             "model_config" {
