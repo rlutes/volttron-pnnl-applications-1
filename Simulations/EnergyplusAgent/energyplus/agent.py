@@ -581,15 +581,15 @@ class EnergyPlusAgent(SynchronizingPubSubAgent):
                if not self.real_time_flag:
                   lines[i + 2] = '    ' + str(self.startmonth) + ',                       !- Begin Month' + '\n'
                   lines[i + 3] = '    ' + str(self.startday) + ',                       !- Begin Day of Month' + '\n'
-                  lines[i + 4] = '    ' + str(self.endmonth) + ',                      !- End Month' + '\n'
-                  lines[i + 5] = '    ' + str(self.endday) + ',                      !- End Day of Month' + '\n'
-                  lines[i + 6] = '    ' +weekdays[int(datetime(2017,int(self.startmonth),int(self.startday)).weekday())]+',                  !- Day of Week for Start Day' + '\n'
+                  lines[i + 5] = '    ' + str(self.endmonth) + ',                      !- End Month' + '\n'
+                  lines[i + 6] = '    ' + str(self.endday) + ',                      !- End Day of Month' + '\n'
+                  lines[i + 8] = '    ' +weekdays[int(datetime(2017,int(self.startmonth),int(self.startday)).weekday())]+',                  !- Day of Week for Start Day' + '\n'
                else:
                   lines[i + 2] = '    ' + str(self.currentmonth) + ',                       !- Begin Month' + '\n'
                   lines[i + 3] = '    ' + str(self.currentday) + ',                       !- Begin Day of Month' + '\n'
-                  lines[i + 4] = '    ' + str(endmonth) + ',                      !- End Month' + '\n'
-                  lines[i + 5] = '    ' + str(endday) + ',                      !- End Day of Month' + '\n'
-                  lines[i + 6] = '    ' +weekdays[int(datetime(2017,int(self.currentmonth),int(self.currentday)).weekday())]+',                  !- Day of Week for Start Day' + '\n'
+                  lines[i + 5] = '    ' + str(endmonth) + ',                      !- End Month' + '\n'
+                  lines[i + 6] = '    ' + str(endday) + ',                      !- End Day of Month' + '\n'
+                  lines[i + 8] = '    ' +weekdays[int(datetime(2017,int(self.currentmonth),int(self.currentday)).weekday())]+',                  !- Day of Week for Start Day' + '\n'
         for i in range(len(lines)):
             if lines[i].lower().find('timestep,') != -1 and lines[i].lower().find('update frequency') == -1:
                 if lines[i].lower().find(';') != -1:
